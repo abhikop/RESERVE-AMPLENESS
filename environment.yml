@@ -1,0 +1,17 @@
+name: reserve-ampleness
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pandas
+  - numpy
+  - statsmodels
+  - scikit-learn
+  - matplotlib
+  - requests         
+  - pyarrow      
+  - jupyterlab
+  - pytest
+  - pip
+  - pip:
+      - fredapi
