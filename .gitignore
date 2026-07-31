@@ -1,0 +1,8 @@
+*.env
+
+.ipynb_checkpoints/
+__pycache__/
+DATA/INTERIM/*
+DATA/PROCESSED/*
+!DATA/INTERIM/README.md
+!DATA/PROCESSED/README.md
