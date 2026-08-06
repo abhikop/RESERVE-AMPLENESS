@@ -8,5 +8,5 @@ version = "0.1.0"
 description = "Reading US funding-market tightness from public data — starting with the quarter-end repo turn."
 requires-python = ">=3.12"
 
-[tool.setuptools]
-packages = ["SRC"]
+[tool.setuptools.packages.find]
+where = ["SRC"]
