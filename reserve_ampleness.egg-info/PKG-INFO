@@ -1,5 +1,0 @@
-Metadata-Version: 2.4
-Name: reserve-ampleness
-Version: 0.1.0
-Summary: Reading US funding-market tightness from public data — starting with the quarter-end repo turn.
-Requires-Python: >=3.12
