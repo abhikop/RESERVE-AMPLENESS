@@ -1,4 +1,5 @@
 {
     "nyfed_all_rates" : "nyfed_rates_all_2000-01-01_2026-08-13_pulled20260813T172932Z.json",
-    "fred_iorb": "fred_IORB_2000-01-01_2026-08-13_pulled20260818T180810Z.json"
+    "fred_iorb": "fred_IORB_2000-01-01_2026-08-13_pulled20260818T180810Z.json",
+    "fred_ioer": "fred_IOER_2000-01-01_2026-08-13_pulled20260818T184354Z.json"
 }

@@ -1,0 +1,12 @@
+{
+  "url": "https://api.stlouisfed.org/fred/series/observations",
+  "params": {
+    "series_id": "IOER",
+    "file_type": "json",
+    "observation_start": "2000-01-01",
+    "observation_end": "2026-08-13"
+  },
+  "pulled_utc": "20260818T184354Z",
+  "n_bytes": 444356,
+  "sha256": "0c8543c1400540b7fe4dcf7583139882d54f592ae49f32f6e873750085ba9f67"
+}
