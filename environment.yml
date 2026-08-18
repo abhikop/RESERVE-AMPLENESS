@@ -12,6 +12,8 @@ dependencies:
   - pyarrow      
   - jupyterlab
   - pytest
+  - python-dotenv
+  - nbstripout
   - pip
   - pip:
-      - fredapi
+      - -e .
