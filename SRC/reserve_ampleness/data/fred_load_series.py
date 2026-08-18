@@ -25,3 +25,10 @@ def load_fred(key: str) -> pd.Series:
     df["date"] = pd.to_datetime(df["date"])
     df["value"] = pd.to_numeric(df["value"], errors="coerce")
     return df.set_index("date")["value"].rename(key).sort_index()
+
+
+def load_policy_rate() -> pd.Series:
+    ioer, iorb = load_fred("fred_ioer"), load_fred("fred_iorb")
+    assert ioer.index.intersection(iorb.index).empty, "IOER/IORB overlap"
+    assert ioer.iloc[-1] == iorb.iloc[0], "level break at the splice"
+    return pd.concat([ioer, iorb]).sort_index().rename("policy_rate")
