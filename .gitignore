@@ -1,6 +1,7 @@
 *.env
 *.egg-info
 .DS_Store
+fredapi.txt
 
 .ipynb_checkpoints/
 __pycache__/
