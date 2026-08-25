@@ -1,0 +1,12 @@
+{
+  "url": "https://api.stlouisfed.org/fred/series/observations",
+  "params": {
+    "series_id": "RRPONTSYD",
+    "file_type": "json",
+    "observation_start": "2000-01-01",
+    "observation_end": "2026-08-13"
+  },
+  "pulled_utc": "20260824T193805Z",
+  "n_bytes": 581712,
+  "sha256": "436305065f388798d8e9db7b8df7f2ff4f23dba255d63e36ae034477efba6368"
+}

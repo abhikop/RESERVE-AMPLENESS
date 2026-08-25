@@ -1,0 +1,12 @@
+{
+  "url": "https://api.stlouisfed.org/fred/series/observations",
+  "params": {
+    "series_id": "WRESBAL",
+    "file_type": "json",
+    "observation_start": "2000-01-01",
+    "observation_end": "2026-08-13"
+  },
+  "pulled_utc": "20260824T193832Z",
+  "n_bytes": 137180,
+  "sha256": "8df424b0a9b069859016a2a9147b81f3a8f383431fe0a6d19a998461bc665880"
+}
