@@ -13,10 +13,10 @@ def trimmed_monthly_median(series, turns, lo=2, hi=2):
 
     The trim exists to exclude month-boundary effects; with lo=2, hi=2 the
     window runs from the 3rd trading day through the 3rd-to-last.
-    Returns `median` and `n` per turn.
+    Returns `median` and `window` per turn.
     """
     if hi < 1:
-        raise ValueError("hi >= 1 required; hi=0 puts the turn day in its own baseline")
+        raise ValueError("hi >= 1 required; hi=0 puts the turn day in its own window")
 
     per  = series.index.to_period("M")
     kept = series.groupby(per, group_keys=False).apply(lambda g: g.iloc[lo:-hi])
@@ -30,4 +30,4 @@ def trimmed_monthly_median(series, turns, lo=2, hi=2):
     if not (last_used < turns.to_numpy()).all():
         raise ValueError("a baseline window reaches its own turn date, or a turn's month is missing")
 
-    return out.rename(columns={"size": "n_days"})
+    return out.rename(columns={"size": "window"})
