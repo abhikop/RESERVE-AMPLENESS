@@ -47,10 +47,11 @@ def build_calendar(trading_days: pd.DatetimeIndex) -> pd.DataFrame:
     cal["is_year_end"] = cal["is_last_in_month"] & month.eq(12)
 
     # general -> specific, so each assignment overwrites only its own subset
+    is_turn = cal["is_last_in_month"] & cal["month_complete"]
     turn_type = pd.Series(pd.NA, index=days, dtype="object")
-    turn_type.loc[cal["is_last_in_month"]] = "month_end"
-    turn_type.loc[cal["is_quarter_end"]] = "quarter_end"
-    turn_type.loc[cal["is_year_end"]] = "year_end"
+    turn_type.loc[is_turn] = "month_end"
+    turn_type.loc[is_turn & cal["is_quarter_end"]] = "quarter_end"
+    turn_type.loc[is_turn & cal["is_year_end"]] = "year_end"
     cal["turn_type"] = pd.Categorical(turn_type, categories=TURN_TYPES, ordered=True)
 
     return cal
