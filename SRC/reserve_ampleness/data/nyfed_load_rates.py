@@ -14,7 +14,7 @@ PCTL_ORDER = (
 )
 
 def load_long(key: str = "nyfed_all_rates") -> pd.DataFrame:
-    data0 = json.loads(resolve("nyfed_all_rates").read_text())
+    data0 = json.loads(resolve(key).read_text())
     data1 = pd.json_normalize(data0['refRates'])
 
     data1['effectiveDate'] = pd.to_datetime(data1['effectiveDate'])
@@ -47,7 +47,7 @@ def to_wide(long: pd.DataFrame, types: tuple[str, ...] = SECURED) -> pd.DataFram
             )
     return pd.concat(frames, axis=1)
 
-
+"""The function below needs the full frame, not just one with only a subset of rates"""
 def validate(wide: pd.DataFrame, expect_rows: int | None = None) -> None:
 
     if not wide.index.is_unique:
@@ -107,6 +107,6 @@ def quality_report(wide: pd.DataFrame) -> dict:
 
 
 def load_rates(key: str = "nyfed_all_rates", types: tuple[str, ...] = SECURED, expect_rows: int | None = None) -> pd.DataFrame:
-    wide = to_wide(load_long(key), types)
+    wide = to_wide(load_long(key), types=SECURED)
     validate(wide, expect_rows=expect_rows)
-    return wide
+    return wide[[c for c in wide.columns if c.split("_", 1)[0] in types]]
