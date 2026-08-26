@@ -28,6 +28,6 @@ def trimmed_monthly_median(series, turns, lo=2, hi=2):
 
     last_used = kept.index.to_series().groupby(kper).max().reindex(tper).to_numpy()
     if not (last_used < turns.to_numpy()).all():
-        raise ValueError("a baseline window reaches its own turn date, or a turn's month is missing")
+        raise ValueError("a window reaches its own turn date, or a turn's month is missing")
 
     return out.rename(columns={"size": "window"})
