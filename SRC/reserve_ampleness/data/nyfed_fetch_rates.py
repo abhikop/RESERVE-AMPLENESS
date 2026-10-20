@@ -77,43 +77,4 @@ def main(argv=None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-"""
-import pathlib
-from datetime import datetime, timezone
-import requests
-import readline
-
-BASE = "https://markets.newyorkfed.org/api"
-REPO = pathlib.Path(__file__).resolve().parents[3]
-RATES = {"sofr": "secured/sofr", "effr": "unsecured/effr",
-         "obfr": "unsecured/obfr", "tgcr": "secured/tgcr",
-         "bgcr": "secured/bgcr", "all": "all"}
-FORMATS = ("json", "csv", "xml", "xlsx")
-
-def pick(label, options):
-    while True:
-        v = input(f"{label} {list(options)}: ").strip().lower()
-        if v in options:
-            return v
-        print(f"  not one of {list(options)}")
-
-rate  = pick("Rate", RATES)
-fmt   = pick("Format", FORMATS)
-start = input("Start date (YYYY-MM-DD): ").strip()
-end   = input("End date   (YYYY-MM-DD): ").strip()
-
-_in = input(f"Save to dir [{REPO / 'DATA' / 'RAW'}]: ").strip()
-outdir = pathlib.Path(_in).expanduser() if _in else REPO / "DATA" / "RAW"
-
-r = requests.get(f"{BASE}/rates/{RATES[rate]}/search.{fmt}",
-                 params={"startDate": start, "endDate": end}, timeout=30)
-r.raise_for_status()
-
-stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-out = outdir / f"nyfed_rates_{rate}_{start}_{end}_pulled{stamp}.{fmt}"
-outdir.mkdir(parents=True, exist_ok=True)
-out.write_bytes(r.content)
-print(f"{len(r.content):,} bytes -> {out}")
-"""
-
 
