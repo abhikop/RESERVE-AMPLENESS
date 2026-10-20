@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 import requests
 from dotenv import load_dotenv, find_dotenv
 
-assert load_dotenv(find_dotenv("fredapi.env")), "no .env found"
+
 
 BASE = "https://api.stlouisfed.org/fred/series/observations"
 FORMATS = ("json", "xml", "xlsx", "csv")
