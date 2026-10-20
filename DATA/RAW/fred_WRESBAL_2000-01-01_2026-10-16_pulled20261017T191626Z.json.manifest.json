@@ -4,9 +4,9 @@
     "series_id": "WRESBAL",
     "file_type": "json",
     "observation_start": "2000-01-01",
-    "observation_end": "2026-08-13"
+    "observation_end": "2026-10-16"
   },
-  "pulled_utc": "20260824T193832Z",
-  "n_bytes": 137180,
-  "sha256": "8df424b0a9b069859016a2a9147b81f3a8f383431fe0a6d19a998461bc665880"
+  "pulled_utc": "20261017T191626Z",
+  "n_bytes": 138018,
+  "sha256": "f6606608e16216ab53f91ac925760838428a425b150224f2e8ed13df4a264379"
 }

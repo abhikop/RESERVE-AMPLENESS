@@ -1,0 +1,10 @@
+{
+  "url": "https://markets.newyorkfed.org/api/rates/all/search.json",
+  "params": {
+    "startDate": "2000-01-01",
+    "endDate": "2026-10-16"
+  },
+  "pulled_utc": "20261017T191437Z",
+  "n_bytes": 3967047,
+  "sha256": "3486d1e784b0b104e9c763d2332a668c6e963d671e5bc25b66d8bf130035ec57"
+}

@@ -4,9 +4,9 @@
     "series_id": "RRPONTSYD",
     "file_type": "json",
     "observation_start": "2000-01-01",
-    "observation_end": "2026-08-13"
+    "observation_end": "2026-10-16"
   },
-  "pulled_utc": "20260824T193805Z",
-  "n_bytes": 581712,
-  "sha256": "436305065f388798d8e9db7b8df7f2ff4f23dba255d63e36ae034477efba6368"
+  "pulled_utc": "20261017T191712Z",
+  "n_bytes": 586109,
+  "sha256": "3e1654bb12f451052d17384313b30692fc0aac1257876383d6f5686f248e4a56"
 }

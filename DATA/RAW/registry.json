@@ -1,7 +1,7 @@
 {
-    "nyfed_all_rates" : "nyfed_rates_all_2000-01-01_2026-08-13_pulled20260813T172932Z.json",
-    "fred_iorb": "fred_IORB_2000-01-01_2026-08-13_pulled20260818T180810Z.json",
-    "fred_ioer": "fred_IOER_2000-01-01_2026-08-13_pulled20260818T184354Z.json",
-    "fred_rrp": "fred_RRPONTSYD_2000-01-01_2026-08-13_pulled20260824T193805Z.json",
-    "fred_wresbal": "fred_WRESBAL_2000-01-01_2026-08-13_pulled20260824T193832Z.json"
+    "nyfed_all_rates" : "nyfed_rates_all_2000-01-01_2026-10-16_pulled20261017T191437Z.json",
+    "fred_iorb": "fred_IORB_2000-01-01_2026-10-16_pulled20261017T191737Z.json",
+    "fred_ioer": "fred_IOER_2000-01-01_2026-10-16_pulled20261017T191758Z.json",
+    "fred_rrp": "fred_RRPONTSYD_2000-01-01_2026-10-16_pulled20261017T191712Z.json",
+    "fred_wresbal": "fred_WRESBAL_2000-01-01_2026-10-16_pulled20261017T191626Z.json"
 }
