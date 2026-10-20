@@ -66,7 +66,8 @@ def main() -> int:
     print("\nMedian p99 spike (bp) by period:")
     for label, start, end in PERIODS:
         sub = t.loc[start:end]
-        cells = [f"{k} {sub.loc[sub['turn_type'] == k, 'p99'].median():.1f}"
+        
+        cells = [f"{k}({sub.loc[sub['turn_type'] == k, 'p99'].dropna().size}) {sub.loc[sub['turn_type'] == k, 'p99'].median():.1f}"
                  for k in TURN_TYPES]
         print(f"  {label}: " + ", ".join(cells))
     
@@ -74,7 +75,7 @@ def main() -> int:
     print("\nMedian headline spike (bp) by period:")
     for label, start, end in PERIODS:
         sub = t.loc[start:end]
-        cells = [f"{k} {sub.loc[sub['turn_type'] == k, 'headline'].median():.1f}"
+        cells = [f"{k}({sub.loc[sub['turn_type'] == k, 'headline'].dropna().size}) {sub.loc[sub['turn_type'] == k, 'headline'].median():.1f}"
                  for k in TURN_TYPES]
         print(f"  {label}: " + ", ".join(cells))
     
@@ -82,7 +83,7 @@ def main() -> int:
     print("\nMedian p99-p25 spike (bp) by period:")
     for label, start, end in PERIODS:
         sub = t.loc[start:end]
-        cells = [f"{k} {sub.loc[sub['turn_type'] == k, 'p99-p25'].median():.1f}"
+        cells = [f"{k}({sub.loc[sub['turn_type'] == k, 'p99-p25'].dropna().size}) {sub.loc[sub['turn_type'] == k, 'p99-p25'].median():.1f}"
                  for k in TURN_TYPES]
         print(f"  {label}: " + ", ".join(cells))
     return 0
