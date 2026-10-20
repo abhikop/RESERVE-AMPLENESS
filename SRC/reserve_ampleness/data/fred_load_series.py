@@ -28,6 +28,9 @@ def load_fred(key: str) -> pd.Series:
 
 
 def load_policy_rate() -> pd.Series:
+    """Interest on reserves, the rate every spread is measured against:
+    IOER through 28 Jul 2021, IORB from 29 Jul 2021. The asserts check that
+    the two series never overlap and meet at the same level."""
     ioer, iorb = load_fred("fred_ioer"), load_fred("fred_iorb")
     assert ioer.index.intersection(iorb.index).empty, "IOER/IORB overlap"
     assert ioer.iloc[-1] == iorb.iloc[0], "level break at the splice"
